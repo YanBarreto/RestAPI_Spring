@@ -42,6 +42,9 @@ public class TopicoDto {
 		 * Mapa funciona com < Key , Value > 
 		 * 
 		 * Logo estamos instanciando um objeto do tipo TopicoDto para cada cada topico passado.
+		 * 
+		 * Lógica:
+		 * 		Cada topico sera uma chave de map e cada valor será uma instancia de TopicoDto em seguida transforma-se os valores do map ( objetos TopicoDto ) em uma lista.
 		 * */
 			
 		return topicos.stream().map(TopicoDto::new).collect(Collectors.toList());
