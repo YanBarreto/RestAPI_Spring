@@ -6,7 +6,6 @@
 
 Este projeto servirá de espelho para outros projetos relacionados a desenvolvimento de API Rest  utilizando o Spring Data JPA.
 
-![N|Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YanBarreto)
 
 ## Dependencias
 
