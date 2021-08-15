@@ -17,11 +17,19 @@ public class TopicosController {
 	private TopicosRepository topicosRepository;
 	
 	@RequestMapping("/topicos")
-	public List<TopicoDto> lista(){
+	public List<TopicoDto> lista(String nomeCurso){
 		
-		List<Topico> topicos = topicosRepository.findAll();
-	
-		return TopicoDto.converter(topicos);
+		if (nomeCurso == null) {
+			
+			List<Topico> topicos = topicosRepository.findAll();
+			return TopicoDto.converter(topicos);
+			
+		} else {
+			
+			List<Topico> topicos = topicosRepository.findByCurso_Nome(nomeCurso);
+			return TopicoDto.converter(topicos);
+			
+		}
 		
 		/* Foi injetada as dependencias da interface TopicosRepository automaticamente atraves da interface do Spring Data JPA.*/
 		/*O metodo .findAll() de JpaRepository retorna uma lista contendo todos os topicos da entidade Topico presente no banco de dados.*/
