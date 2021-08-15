@@ -13,10 +13,8 @@ public class Curso {
 	private String nome;
 	private String categoria;
 
-	public Curso(String nome, String categoria) {
-		this.nome = nome;
-		this.categoria = categoria;
-	}
+	/*Construtor removido: O Spring Data JPA aceita apenas os construtores padrao para as classes 
+	 * modelo que representam entidades do banco de dados*/
 	
 	@Override
 	public int hashCode() {
