@@ -30,11 +30,7 @@ public class Topico {
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
-	public Topico(String titulo, String mensagem, Curso curso) {
-		this.titulo = titulo;
-		this.mensagem = mensagem;
-		this.curso = curso;
-	}
+	/* Construtor removido: O spring data JPA exige que a classe que representa a entidade possua apenas o construtor padrao. */
 
 	@Override
 	public int hashCode() {
