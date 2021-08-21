@@ -9,29 +9,49 @@ public class TopicoForm {
 	private String titulo;
 	private String nomeCurso;
 	private String mensagem;
-	public String getNome() {
+	
+	
+	
+	public String getTitulo() {
 		return titulo;
 	}
-	public void setNome(String nome) {
-		this.titulo = nome;
+
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
+
+
+
 	public String getNomeCurso() {
 		return nomeCurso;
 	}
+
+
+
 	public void setNomeCurso(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
 	}
+
+
+
 	public String getMensagem() {
 		return mensagem;
 	}
+
+
+
 	public void setMensagem(String mensagem) {
 		this.mensagem = mensagem;
 	}
-	
+
+
+
 	public Topico converter(CursoRepository cursoRepository) {
 		
 		Curso curso = cursoRepository.findByNome(nomeCurso);		
-		return new Topico(titulo, mensagem, curso);
+		return new Topico(this.titulo, this.mensagem, curso);
 	}
 
 	
