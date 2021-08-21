@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.alura.forum.modelo.Curso;
 import br.com.alura.forum.modelo.Topico;
 
 public class TopicoDto {
@@ -11,6 +12,7 @@ public class TopicoDto {
 	private Long id;
 	private String titulo;
 	private String mensagem;
+	private String nomeCurso;	
 	private LocalDateTime dataCriacao;
 	
 	public TopicoDto(Topico topico) {
@@ -18,6 +20,7 @@ public class TopicoDto {
 		this.titulo = topico.getTitulo();
 		this.mensagem = topico.getMensagem();
 		this.dataCriacao = topico.getDataCriacao();
+		this.nomeCurso = topico.getCurso().getNome();
 	}
 
 	public Long getId() {
@@ -33,6 +36,15 @@ public class TopicoDto {
 		return dataCriacao;
 	}
 	
+	
+	public String getNomeCurso() {
+		return nomeCurso;
+	}
+
+	public void setNomeCurso(String nomeCurso) {
+		this.nomeCurso = nomeCurso;
+	}
+
 	public static List<TopicoDto> converter(List<Topico> topicos) {
 		
 		/*
