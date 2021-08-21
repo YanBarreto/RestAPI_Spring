@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.alura.forum.controller.dto.TopicoDto;
-import br.com.alura.forum.controller.form.TopicoForm;
-import br.com.alura.forum.modelo.Curso;
 import br.com.alura.forum.modelo.Topico;
-import br.com.alura.forum.repository.CursoRepository;
 import br.com.alura.forum.repository.TopicosRepository;
 
 /*
@@ -42,11 +39,10 @@ public class TopicosController {
 	}
 	
 	@PostMapping
-	public void cadastrar(@RequestBody TopicoForm topico){
-				Curso curso = cursosRepository.findByNome(topico.getNomeCurso());
-				System.out.println(curso.getNome());
-				System.out.println(curso.getCategoria());
-				topico.converter(curso, topico);
+	public void cadastrar(@RequestBody TopicoForm form){
+		
+		Topico topico = form.converter(cursosRepository);
+		topicosRepository.save(topico);
 	}
 	
 	
